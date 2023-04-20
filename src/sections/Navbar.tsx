@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import pokeballIcon from "../assets/assets/pokeball-icon.png";
 import {GiHamburgerMenu} from "react-icons/gi";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
 
 
 export default function Navbar() {
-
+    const location = useLocation();
     const navigationRoutes = [
         {
             name: "Search",
@@ -28,6 +28,19 @@ export default function Navbar() {
             route: "/about",
         },
     ];
+    useEffect(() => {
+        const index = navigationRoutes.findIndex(({route}) =>
+            location.pathname.includes(route)
+        );
+        ul(index);
+    }, [location.pathname, navigationRoutes]);
+
+    function ul(index: number) {
+        let underline = document.querySelectorAll<HTMLElement>(".underline");
+        for (let i = 0; i < underline.length; i++) {
+            underline[i].style.transform = "translate3d(" + index * 100 + "%,0,0)";
+        }
+    }
 
     return (
         <nav>
