@@ -1,6 +1,7 @@
 import React from 'react';
-import pokeball1 from "../assets/pokeball.png";
-import pokeball2 from "../assets/pokeball2.png";
+import pokeball1 from "../assets/assets/pokeball.png";
+import pokeball2 from "../assets/assets/pokeball2.png";
+
 const Background = () => {
     return (
         <div className="background">
