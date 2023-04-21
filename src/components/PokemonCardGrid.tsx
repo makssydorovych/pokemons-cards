@@ -1,5 +1,5 @@
 import React from 'react';
-import {userPokemonsType} from "../utils/types";
+import {pokemonTypeInterface, userPokemonsType} from "../utils/types";
 
 
 
@@ -11,10 +11,23 @@ const PokemonCardGrid = ({pokemons}: {pokemons: userPokemonsType[]}) => {
                     pokemons && pokemons.length >0 &&
                 pokemons?.map((data:userPokemonsType)=>{
                     return <div className="pokemon-card" key={data.id}>
-                    <div className="pokemon-card-lis"></div>
+                    <div className="pokemon-card-list"></div>
                         <div className="pokemon-card-compare"></div>
                         <h3 className="pokemon-card-title">{data.name}</h3>
-                        <img src={data.image} alt="pokemon image" className="pokemon-card-image"/>
+                        <img src={data.image} alt="pokemon image" className="pokemon-card-image" loading="lazy"/>
+                        <div className="pokemon-card-types">
+                            {data.types.map((type:pokemonTypeInterface, index:number)=>{
+                                const keys = Object.keys(type);
+                                return(
+                                    <div className="pokemon-card-types-type" key={index}>
+                                        <img src={type[keys[0]].image} alt="pokemon type" loading="lazy" className="pokemon-card-types-type-image"/>
+                                        <h6 className="pokemon-card-types-type-text">
+                                            {keys[0]}
+                                        </h6>
+                                    </div>
+                                )
+                            })}
+                        </div>
                     </div>
                 })
                 }
