@@ -38,7 +38,7 @@ const Search = () => {
     return (
         <div className="search">
             <input/>
-            <PokemonCardGrid pokemons={randomPokemons}/>
+            <PokemonCardGrid pokemons={randomPokemons!}/>
         </div>
     );
 };
