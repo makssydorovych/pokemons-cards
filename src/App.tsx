@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Navbar from "./sections/Navbar";
 import Wrapper from "./sections/Wrapper";
 import Footer from "./sections/Footer";
@@ -10,8 +10,20 @@ import MyList from "./pages/MyList";
 import About from "./pages/About";
 import Compare from "./pages/Compare";
 import Pokemon from "./pages/Pokemon";
-
+import {ToastContainer, toast} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import "./scss/index.scss";
+import {useAppDispatch, useAppSelector} from "./app/hooks";
 const App = () => {
+    const {toasts} = useAppSelector(({app})=>app)
+    const dispatch = useAppDispatch();
+    useEffect(()=>{
+if(toasts.length){
+    toasts.forEach((message:string)=>{
+        toast(message)
+    })
+}
+    },[toasts,dispatch])
     return (
         <div className="main-container">
             <Background/>
@@ -28,6 +40,7 @@ const App = () => {
                     </Routes>
 
                     <Footer/>
+                    <ToastContainer/>
                 </div>
             </BrowserRouter>
         </div>
