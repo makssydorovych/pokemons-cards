@@ -6,7 +6,7 @@ export const getInitialPokemonData = createAsyncThunk("pokemon/initialData", asy
     try {
         const {data} = await axios.get(pokemonsRoute)
 
-        return data.res;
+        return data.result;
     } catch (err) {
 
     }
