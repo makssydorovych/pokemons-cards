@@ -12,6 +12,9 @@ const PokemonCardGrid = ({pokemons}: {pokemons: userPokemonsType[]}) => {
                 pokemons?.map((data:userPokemonsType)=>{
                     return <div className="pokemon-card" key={data.id}>
                     <div className="pokemon-card-lis"></div>
+                        <div className="pokemon-card-compare"></div>
+                        <h3 className="pokemon-card-title">{data.name}</h3>
+                        <img src={data.image} alt="pokemon image" className="pokemon-card-image"/>
                     </div>
                 })
                 }
