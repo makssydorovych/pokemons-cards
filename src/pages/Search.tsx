@@ -14,7 +14,6 @@ const Search = () => {
 
     useEffect(() => {
         dispatch(getInitialPokemonData());
-        console.log(allPokemon)
     }, [dispatch]);
 
     useEffect(() => {
@@ -37,8 +36,9 @@ const Search = () => {
 
 
     return (
-        <div>
-            <PokemonCardGrid />
+        <div className="search">
+            <input/>
+            <PokemonCardGrid pokemons={randomPokemons}/>
         </div>
     );
 };
