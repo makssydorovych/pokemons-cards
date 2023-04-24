@@ -25,7 +25,9 @@ const PokemonCardGrid = ({pokemons}: { pokemons: userPokemonsType[] }) => {
                                 )}
                             </div>
                             <div className="pokemon-card-compare">
-                                <IoGitCompare onClick={()=>dispatch(addToCompare(data))}/>
+                                <IoGitCompare onClick={()=> {
+                                    dispatch(addToCompare(data))
+                                }}/>
                             </div>
                             <h3 className="pokemon-card-title">{data.name}</h3>
                             <img src={data.image} alt="pokemon image" className="pokemon-card-image" loading="lazy"

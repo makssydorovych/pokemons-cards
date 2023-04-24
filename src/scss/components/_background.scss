@@ -2,12 +2,16 @@
   z-index: -1;
   position: absolute;
   max-height: 100vh;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem;
+  width: 90%;
 img{
-  max-inline-size: 100%;
-  block-size: auto;
-  height: 20rem;
+  ////max-inline-size: 100%;
+  //block-size: 100%;
+  width: 75%;
+  height: 75%;
+
 }
 }
