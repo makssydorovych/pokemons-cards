@@ -13,6 +13,10 @@ const CompareContainer = ({pokemon = undefined, isEmpty = false}: { pokemon?: us
                 <h4>Add Pokemon</h4>
             </div>
             }
+            {
+                pokemon &&
+                <div className="compare-element"></div>
+            }
         </div>
     );
 }
