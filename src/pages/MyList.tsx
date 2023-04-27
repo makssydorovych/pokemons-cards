@@ -3,7 +3,7 @@ import Wrapper from "../sections/Wrapper";
 
 const MyList = () => {
     return (
-        <div>
+        <div className="list">
             
         </div>
     );
