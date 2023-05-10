@@ -10,6 +10,7 @@ const initialState: PokemonInitialStateType = {
     compareQueue: [],
     userPokemons: [],
     currentPokemon: undefined,
+
 };
 export const PokemonSlice = createSlice({
     name: "pokemon",
